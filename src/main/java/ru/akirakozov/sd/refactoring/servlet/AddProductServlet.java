@@ -19,6 +19,6 @@ public class AddProductServlet extends HttpServlet {
         long price = Long.parseLong(request.getParameter("price"));
 
         DatabaseHelper.dbUpdate("INSERT INTO PRODUCT (NAME, PRICE) VALUES (\"" + name + "\"," + price + ")");
-        new HtmlHelper(response).echo("OK");
+        new HtmlHelper(response).echo("OK").finish();
     }
 }

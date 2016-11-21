@@ -35,6 +35,7 @@ public class QueryServlet extends HttpServlet {
                         helper.echo(rs.getInt(1));
                     }
                 });
+                break;
             case "count":
                 DatabaseHelper.dbQuery("SELECT COUNT(*) FROM PRODUCT", rs -> {
                     helper.echo("Number of products: ");

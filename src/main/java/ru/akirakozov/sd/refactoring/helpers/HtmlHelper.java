@@ -11,20 +11,23 @@ import java.sql.SQLException;
 public class HtmlHelper {
 
     private HttpServletResponse response;
+    private StringBuilder builder;
 
     public HtmlHelper(HttpServletResponse rsp) throws IOException {
         response = rsp;
-        response.setContentType("text/html");
-        response.setStatus(HttpServletResponse.SC_OK);
+        builder = new StringBuilder();
         echo("<html><body>");
     }
 
     public void finish() throws IOException {
         echo("</body></html>");
+        response.setContentType("text/html");
+        response.setStatus(HttpServletResponse.SC_OK);
+        response.getWriter().print(builder.toString());
     }
 
     public HtmlHelper echo(String body) throws IOException {
-        response.getWriter().println(body);
+        builder.append(body).append("\n");
         return this;
     }
 
