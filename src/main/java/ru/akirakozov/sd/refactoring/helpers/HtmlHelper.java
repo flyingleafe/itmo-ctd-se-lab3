@@ -39,7 +39,7 @@ public class HtmlHelper {
         while (rs.next()) {
             String name = rs.getString("name");
             int price = rs.getInt("price");
-            echo(name + "\t" + price + "</br>");
+            echo(name + "\t" + price + "<br>");
         }
         return this;
     }

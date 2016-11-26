@@ -1,8 +1,5 @@
 package ru.akirakozov.sd.refactoring.helpers;
 
-import java.io.IOException;
-import java.sql.SQLException;
-
 /**
  * @author flyingleafe
  */
